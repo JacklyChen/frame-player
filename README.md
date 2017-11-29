@@ -36,7 +36,7 @@ https://zhuweiyou.github.io/frame-player/
   - [event: 'play'](#event-play)
   - [event: 'update'](#event-update)
   - [event: 'stop'](#event-stop)
-  - [framePlayer.on(event, fn)](##frameplayeronevent-fn)
+  - [framePlayer.on(event, fn)](#frameplayeronevent-fn)
   - [framePlayer.play([desc])](#frameplayerplaydesc)
   - [framePlayer.stop([frame])](#frameplayerstopframe)
   - [framePlayer.frame](#frameplayerframe)
