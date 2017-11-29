@@ -4,15 +4,39 @@
 [![NPM Version](https://img.shields.io/npm/v/frame-player.svg)](https://www.npmjs.com/package/frame-player)
 [![NPM Download](https://img.shields.io/npm/dt/frame-player.svg)](https://www.npmjs.com/package/frame-player)
 
-图片序列帧播放器
+图片序列帧播放器，代替 gif、video 播放
 
-## FramePlayer API
-- [class: FramePlayer(options)](#class-FramePlayer-options)
+## Install
+
+- 本地
+```bash
+npm i -S frame-player
+```
+
+```js
+import FramePlayer from 'frame-player'
+
+const framePlayer = new FramePlayer(options)
+```
+
+- CDN
+```html
+<script src="//unpkg.com/frame-player"></script>
+```
+
+## Example
+
+https://zhuweiyou.github.io/frame-player/
+
+## API
+- [class: FramePlayer(options)](#class-frameplayeroptions)
+  - [FramePlayer.version](#frameplayerversion)
   - [event: 'loading'](#event-loading)
   - [event: 'ready'](#event-ready)
   - [event: 'play'](#event-play)
   - [event: 'update'](#event-update)
   - [event: 'stop'](#event-stop)
+  - [framePlayer.on(event, fn)](#frameplayeronevent-fn)
   - [framePlayer.play([desc])](#frameplayerplaydesc)
   - [framePlayer.stop([frame])](#frameplayerstopframe)
   - [framePlayer.frame](#frameplayerframe)
@@ -28,6 +52,9 @@
   - `alternate` <[boolean]> 是否轮流反向播放，配合 `loop` 使用才有效果。默认 `false`
   - `transparent` <[boolean]> 图片是否透明，`false` 时每次绘制前不清空画布。默认 `false`
   - `autoPlay` <[boolean]> 是否自动播放，`true` 会在图片 [ready](#event-ready) 后立即播放。默认 `false`
+
+#### FramePlayer.version
+- returns: <[number]> 获取当前版本号
 
 #### event: 'loading'
 - `options` <[Object]>
@@ -53,21 +80,24 @@
 #### event: 'stop'
 停止播放的事件
 
+#### framePlayer.on(event, fn)
+- `event` <[string]> 事件名
+- `fn` <[function]> 回调函数
+
+事件监听
+
 #### framePlayer.play([desc])
 - `desc` <[boolean]> 是否反向播放。默认 `false`
 
-播放动画，将从之前 [stop()](frameplayerstopframe) 的位置继续播放，默认从 `0` 开始
+播放动画，将从之前 [stop()](#frameplayerstopframe) 的位置继续播放，默认从 `0` 开始
 
 #### framePlayer.stop([frame])
 - `frame` <[number]> 停止的帧索引。默认 `当前播放索引`
 
 停止播放，也可以传入 frame 跳帧到指定位置
 
-### framePlayer.frame
+#### framePlayer.frame
 - returns: <[number]> 获取当前播放帧索引
-
-## example
-
 
 [Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object "Object"
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type "String"

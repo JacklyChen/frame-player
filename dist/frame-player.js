@@ -889,7 +889,7 @@ var FramePlayer = function (_EventEmitter) {
   (0, _createClass3.default)(FramePlayer, null, [{
     key: 'version',
     get: function get() {
-      return "1.0.0";
+      return "1.0.2";
     }
   }]);
 
