@@ -57,10 +57,7 @@ export default class FramePlayer extends EventEmitter {
     let count = 0
     let length = images.length
     return images.map(src => {
-      let image = src
-      if (!(image instanceof Image)) {
-        image = new Image()
-      }
+      const image = new Image()
       image.onload = () => {
         this.emit('loading', {
           count: ++count,

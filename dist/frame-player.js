@@ -889,7 +889,7 @@ var FramePlayer = function (_EventEmitter) {
   (0, _createClass3.default)(FramePlayer, null, [{
     key: 'version',
     get: function get() {
-      return "1.0.0";
+      return "1.0.3";
     }
   }]);
 
@@ -972,10 +972,7 @@ var FramePlayer = function (_EventEmitter) {
       var count = 0;
       var length = images.length;
       return images.map(function (src) {
-        var image = src;
-        if (!(image instanceof Image)) {
-          image = new Image();
-        }
+        var image = new Image();
         image.onload = function () {
           _this2.emit('loading', {
             count: ++count,

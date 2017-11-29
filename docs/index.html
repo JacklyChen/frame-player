@@ -7,8 +7,15 @@
   <body>
     <canvas id="example"></canvas>
     <div id="loading"></div>
+    <div>
+      <button onclick="framePlayer.play()">play() 正向播放</button>
+      <button onclick="framePlayer.play(true)">play(true) 反向播放</button>
+      <button onclick="framePlayer.stop()">stop() 停止</button>
+      <button onclick="framePlayer.stop(50)">stop(50) 停止并跳到第 50 帧位置</button>
+      <span id="frame">当前帧</span>
+    </div>
 
-    <script src="../dist/frame-player.min.js"></script>
+    <script src="//unpkg.com/frame-player"></script>
     <script>
       var images = []
       for (var i = 1; i <= 149; i++) {
@@ -26,11 +33,12 @@
         autoPlay: true
       })
 
-      framePlayer.on('loading', function ({count, total}) {
-        document.querySelector('#loading').innerHTML = '加载进度 ' + (count / total * 100).toFixed(2) + '%'
+      framePlayer.on('loading', function (options) {
+        document.querySelector('#loading').innerHTML = '加载进度 ' + (options.count / options.total * 100).toFixed(2) + '%'
       })
 
       framePlayer.on('ready', function () {
+        document.querySelector('#loading').style.display = 'none'
         // 当 autoPlay: false 时，play() 需要在 ready 中调用，才能保证画面的正常显示
         // framePlayer.play()
       })
@@ -44,6 +52,8 @@
       })
 
       framePlayer.on('update', function (options) {
+        console.log(options)
+        document.querySelector('#frame').innerHTML = '当前帧: ' + options.frame
         // console.log('update', options)
       })
     </script>
