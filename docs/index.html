@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Frame Player</title>
+  </head>
+  <body>
+    <canvas id="example"></canvas>
+    <div id="loading"></div>
+
+    <script src="../dist/frame-player.min.js"></script>
+    <script>
+      var images = []
+      for (var i = 1; i <= 149; i++) {
+        images.push('img/' + i + '.jpg')
+      }
+
+      var framePlayer = new FramePlayer({
+        canvas: '#example',
+        width: 320,
+        height: 504,
+        images: images,
+        loop: -1,
+        fps: 60,
+        alternate: true,
+        autoPlay: true
+      })
+
+      framePlayer.on('loading', function ({count, total}) {
+        document.querySelector('#loading').innerHTML = '加载进度 ' + (count / total * 100).toFixed(2) + '%'
+      })
+
+      framePlayer.on('ready', function () {
+        // 当 autoPlay: false 时，play() 需要在 ready 中调用，才能保证画面的正常显示
+        // framePlayer.play()
+      })
+
+      framePlayer.on('play', function () {
+        // console.log('play')
+      })
+
+      framePlayer.on('stop', function () {
+        // console.log('stop')
+      })
+
+      framePlayer.on('update', function (options) {
+        // console.log('update', options)
+      })
+    </script>
+  </body>
+</html>

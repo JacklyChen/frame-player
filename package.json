@@ -1,0 +1,26 @@
+{
+  "name": "frame-player",
+  "version": "1.0.0",
+  "description": "Frame Player",
+  "main": "dist/frame-player.min.js",
+  "module": "src/frame-player.js",
+  "scripts": {
+    "dev": "webpack -w",
+    "prod": "cross-env NODE_ENV=prod webpack"
+  },
+  "author": "zhuweiyou <i@zhuweiyou.com> (https://zhuweiyou.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.0.5",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "eventemitter3": "^2.0.3",
+    "raf": "^3.4.0"
+  }
+}
