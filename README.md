@@ -46,7 +46,7 @@ https://zhuweiyou.github.io/frame-player/
   - `canvas` <[string]|[HTMLCanvasElement]> 画布选择器 | 画布对象。默认 `"canvas"`
   - `width` <[number]> 绘制宽度（当设置了 css width 时，作为绘制比例）
   - `height` <[number]> 绘制高度（当设置了 css height 时，作为绘制比例）
-  - `images` <[Array]<[string]|[Image]>> 图片路径数组 | 图片对象数组。
+  - `images` <[Array]<[string]>> 图片路径数组
   - `fps` <[number]> 帧率。默认 `24`
   - `loop` <[number]> 循环播放次数。`-1` 为无限循环，默认 `0` 不循环
   - `alternate` <[boolean]> 是否轮流反向播放，配合 `loop` 使用才有效果。默认 `false`
