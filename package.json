@@ -1,9 +1,9 @@
 {
   "name": "frame-player",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Frame Player",
   "main": "dist/frame-player.min.js",
-  "module": "src/frame-player.js",
+  "module": "src/index.js",
   "scripts": {
     "dev": "webpack -w",
     "prod": "cross-env NODE_ENV=prod webpack"
