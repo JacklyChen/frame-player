@@ -1,5 +1,7 @@
 # frame-player
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zhuweiyou/frame-player.svg)](https://greenkeeper.io/)
+
 [![License MIT](https://img.shields.io/npm/l/frame-player.svg)](https://github.com/zhuweiyou/frame-player/blob/master/LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/frame-player.svg)](https://www.npmjs.com/package/frame-player)
 [![NPM Download](https://img.shields.io/npm/dt/frame-player.svg)](https://www.npmjs.com/package/frame-player)
